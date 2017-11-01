@@ -1,0 +1,26 @@
+# normalize attribute c_annual_income (Values come between 0-1)
+def normalize_balance(c_annual_income):
+    return (c_annual_income-df.c_annual_income.values.min())/(df.c_annual_income.values.max() - df.c_annual_income.values.min())
+ 
+# standardise attribute c_annual_income (Values come between -1 to 1)
+def standardize_balance(c_annual_income):
+    return (c_annual_income-df.c_annual_income.mean())/df.c_annual_income.std()
+# c_annual_income
+df['c_annual_income'] = df.apply(lambda row: normalize_balance(row['c_annual_income']), axis=1)
+df['c_annual_income'] = df.apply(lambda row: standardize_balance(row['c_annual_income']), axis=1)
+
+
+# Other Code run series 
+import pandas as pd 
+import numpy as np
+data=pd.read_csv(r'\..\train.csv')
+Fare= data['Fare'].values[:40]
+from sklearn import preprocessing
+#'''Scale() Function:
+
+#The function scale provide a basic overview of pre-processing. The scale function will transform your data between -1 to 1.
+
+#Apply the function to our input data(Fare) and store the output into other variable called fare_scaled.'''
+
+fare_scaled= preprocessing.scale(Fare)
+#The data has been scaled and now its lie between -1,1.
