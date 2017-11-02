@@ -1,4 +1,11 @@
 # normalize attribute c_annual_income (Values come between 0-1)
+Code 1:-
+from sklearn.preprocessing import MinMaxScaler
+scaler = MinMaxScaler()
+df_tr[['c_annual_income', 'age']] = scaler.fit_transform(df_tr[['c_annual_income', 'age']])
+
+
+
 def normalize_balance(c_annual_income):
     return (c_annual_income-df.c_annual_income.values.min())/(df.c_annual_income.values.max() - df.c_annual_income.values.min())
  
