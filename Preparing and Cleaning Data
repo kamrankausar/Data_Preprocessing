@@ -1,0 +1,67 @@
+1. Look at the data:- Review the data, use head and tail method of the Python
+ 
+2. Slice the data: -  -> There’s usually an underlying substructure in data, 
+                      so slice your data as you would a pizza,building separate models for each slice.
+                      -> Once you’ve pinpointed a target, build a shallow decision tree and 
+                      then create separate models for each segment.
+                      -> Keep in mind that clustering algorithms often do not derive as good of segments when you have a target.
+
+3. Use simple models:- -> Simple models are easier to deploy and make the process of explaining 
+                        results to key business stakeholders easier.                 
+                        -> Build simple, white-box models using regression and decision trees,
+                        and use a gradient boosting or ensemble model to confirm how your simple models are performing.
+                        
+4. Detect rare events:- -> Machine learning often requires the use of unbalanced data,
+                           so correctly classifying rare events can be difficult.                         
+                        -> To counteract this, construct a biased training data set by oversampling or undersampling.
+                            and the higher ratio of events will help your algorithm learn to better isolate the event signal.
+                        -> Another rare event modeling strategy is to use decision processing,
+                            to place greater weight on correctly classifying the event.
+                        
+5. Combine lots of models:- -> Data scientists commonly use algorithms like gradient boosting and random forests 
+                              to automatically build lots of models.
+                            -> However, these models may generalize well, 
+                                and some algorithms will fit better than others within specific data boundaries
+                            -> Place more emphasis on the modeling method 
+                                that has the overall best classification or fit on the validation data,
+                                but also consider including two weak classifiers that 
+                                do a better job of capturing specific spaces of your training data.
+                                
+6. Deploy your models:- -> Too often, model deployment can take weeks or months, with some models never even getting deployed. 
+                        -> To get models into production efficiently, you must determine the business objective;
+                           access and manage the data; and develop, validate, deploy and monitor the model.
+                        -> Also, use tools that automatically capture and bind the data preparation logic
+                           so data engineers or IT staff have a blueprint for implementation.
+                        -> Also consider creating standardized analytical data marts to foster data replication and reuse.
+                        -> Also consider creating standardized analytical data marts to foster data replication and reuse.
+                        
+7. Autotune your models:- -> Before building a machine learning model, algorithm options called hyperparameters need to be assigned.
+                          -> Autotuning can help pinpoint suitable hyperparameters accurately and quickly. 
+                          -> Use Grid Search (we recommend using a Latin hypercube to search across the hypermeter space) to 
+                             autotune your parameters, by searching through a manually specified subset of the hyperparameter’s space,
+                             guided by a performance metric.
+                             
+8. Manage change:- -> Changes or additions to features can cause entire models to fundamentally change.
+                   -> To compensate for this reality, calculate population stability indexes and 
+                      characteristic monitoring statistics to measure model decay at frequent intervals.
+                   -> Monitor the ROC and lift for classification models, set up jobs to detect model decay, 
+                      and schedule re-training jobs at specific intervals.
+                      
+9. Balance generalization:- -> Generalization is the learned model’s ability to fit well with new, unseen data.
+                            -> The key with generalization is maintaining balance, 
+                               where you shift between models with high bias and those with high variance.
+                            -> So, if you have high variance error, use more data or subset features.
+                            -> If you have high bias error, use more features. 
+                            -> Using the right evaluation metric is essential to selecting models that will generalize well on new data.
+                            
+                            
+10. Add features :- -> Training data sets require several example predictor variables to classify or predict a response.
+                    -> In machine learning, the predictor variables are called features and the responses are called labels.
+                    ->  Infuse your training data with several readily available features to help derive a better fitting model.
+                    -> For example, try infusing your model with customer feedback data, if what customers are saying is highly predictive.
+                    -> You can also infuse your models with purchase history data,
+                       since what customers have bought can be helpful information
+                       when building purchase propensity or next best offer models.
+                            
+                      
+                      
